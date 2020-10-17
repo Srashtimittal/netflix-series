@@ -1,17 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import Box from './Box';
+import Data from './Data';
+import "./index.css";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+<>
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+<h1 className="start"> List of Top 6 Netflix Series in 2020 </h1>
+{Data.map(function play(value){
+   return(
+   <Box 
+   imgsrc={value.imgsrc}
+   title={value.title}
+   sename={value.sename}
+   link={value.link}
+    />
+   );
+}
+)}
+</>
+,document.getElementById('root'));
+
